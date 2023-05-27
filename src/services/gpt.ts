@@ -1,8 +1,14 @@
+import { config } from 'dotenv'
+
+config()
+
 import { Configuration, OpenAIApi } from 'openai'
 import { getUserFromJson } from '../getUserFromJson'
 
+console.log(process.env.OPENAI_API_KEY)
+
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: process.env.OPENAI_API_KEY as string,
 })
 const openai = new OpenAIApi(configuration)
 
