@@ -1,7 +1,3 @@
-import { config } from 'dotenv'
-
-config()
-
 import { Configuration, OpenAIApi } from 'openai'
 import { getUserFromJson } from '../getUserFromJson'
 

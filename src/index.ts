@@ -1,5 +1,8 @@
 import express from 'express'
 import cors from 'cors'
+import { config } from 'dotenv'
+
+config()
 
 import { saveToJSON } from './saveToJson'
 import { getUserFromJson } from './getUserFromJson'
@@ -13,7 +16,7 @@ app.use(cors())
 
 app.use(express.json())
 
-const port = 3000
+const port = process.env.PORT || 3333
 
 app.post('/createUser', async (req, res) => {
   console.log('criando novo usuario')
